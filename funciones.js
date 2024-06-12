@@ -156,7 +156,7 @@ const reparticionDeuda = async() => {
         const debeJSON = newJSON.roommates  
 
 
-        debeJSON.forEach((element) => element.debe = total/debeJSON.length);
+        debeJSON.forEach((element) => element.debe = Math.round(total/debeJSON.length));
 
         return fs.writeFileSync(__dirname +'/json/roommates.json', JSON.stringify({roommates:debeJSON,length:roommates.length }));
         
